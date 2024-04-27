@@ -7,3 +7,8 @@ Route::group(['middleware' => ['auth']], function () {
         return view('home');
     })->name('home');
 });
+Route::get('/welcome', function () {
+    return view('welcome');
+})->name('welcome')->middleware('is_admin');
+
+

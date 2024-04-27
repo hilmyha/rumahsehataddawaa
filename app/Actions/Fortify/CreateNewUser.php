@@ -31,6 +31,7 @@ class CreateNewUser implements CreatesNewUsers
             'no_hp' => ['required', 'string', 'max:255'],
             'alamat' => ['required', 'string', 'max:255'],
             'umur' => ['required', 'numeric', 'max:255'],
+            'is_admin' => ['boolean'],
             'password' => $this->passwordRules(),
         ])->validate();
 
@@ -40,6 +41,7 @@ class CreateNewUser implements CreatesNewUsers
             'no_hp' => $input['no_hp'],
             'alamat' => $input['alamat'],
             'umur' => $input['umur'],
+            'is_admin' => $input['is_admin'],
             'password' => Hash::make($input['password']),
         ]);
     }

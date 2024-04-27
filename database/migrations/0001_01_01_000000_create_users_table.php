@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('no_hp');
             $table->string('alamat');
             $table->integer('umur');
+            $table->boolean('is_admin')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
